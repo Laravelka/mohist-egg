@@ -3,7 +3,7 @@
     "meta": {
         "version": "PTDL_v1"
     },
-    "exported_at": "2020-07-11T21:55:24+02:00",
+    "exported_at": "2020-07-28T18:16:04+02:00",
     "name": "Mohist",
     "author": "tgggcraft83@gmail.com",
     "description": "Here is the mohist egg",
@@ -17,7 +17,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Mohist Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nrm -rf \/mnt\/server\r\n\r\napk update\r\napk add curl\r\n\r\ncd \/mnt\/server\r\n\r\necho -e \"\\nDownloading Mohist\\n\"\r\n\r\ncurl -sS https:\/\/ci.codemc.io\/job\/Mohist-Community\/job\/Mohist-1.12.2\/600\/artifact\/build\/distributions\/Mohist-1.12.2-baf4531-server.jar -o $SERVER_JARFILE\r\n\r\ncurl -sS https:\/\/launcher.mojang.com\/v1\/objects\/886945bfb2b978778c3a0288fd7fab09d315b25f\/server.jar -o minecraft_server.1.12.2.jar",
+            "script": "#!\/bin\/ash\r\n# Mohist Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nrm -rf \/mnt\/server\r\n\r\napk update\r\napk add curl\r\n\r\ncd \/mnt\/server\r\n\r\necho -e \"\\nDownloading Mohist\\n\"\r\n\r\ncurl -sS https:\/\/ci.codemc.io\/job\/Mohist-Community\/job\/Mohist-1.12.2\/639\/artifact\/build\/distributions\/Mohist-1.12.2-b69b720-server.jar -o $SERVER_JARFILE\r\n\r\ncurl -sS https:\/\/launcher.mojang.com\/v1\/objects\/886945bfb2b978778c3a0288fd7fab09d315b25f\/server.jar -o minecraft_server.1.12.2.jar",
             "container": "openjdk:8-alpine",
             "entrypoint": "ash"
         }
