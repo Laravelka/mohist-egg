@@ -1,3 +1,3 @@
 # Mohist egg for Pterodactyl
 
-Current version of mohist used in this egg : baf4531
+Current version of mohist used in this egg : b69b720
