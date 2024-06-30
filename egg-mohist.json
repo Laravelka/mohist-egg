@@ -5,20 +5,20 @@
     },
     "exported_at": "2020-07-28T18:16:04+02:00",
     "name": "Mohist",
-    "author": "tgggcraft83@gmail.com",
-    "description": "Here is the mohist egg",
-    "image": "quay.io\/pterodactyl\/core:java",
+    "author": "laravelka@yandex.ru",
+    "description": "Here is the mohist 1.19.4 egg",
+    "image": "quay.io/pterodactyl/core:java",
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"enable-query\": \"true\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \",\r\n    \"userInteraction\": [\r\n        \"Go to eula.txt for more info.\"\r\n    ]\r\n}",
-        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs\/latest.log\"\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs/latest.log\"\r\n}",
         "stop": "stop"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Mohist Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nrm -rf \/mnt\/server\r\n\r\napk update\r\napk add curl\r\n\r\ncd \/mnt\/server\r\n\r\necho -e \"\\nDownloading Mohist\\n\"\r\n\r\ncurl -sS https:\/\/ci.codemc.io\/job\/Mohist-Community\/job\/Mohist-1.12.2\/639\/artifact\/build\/distributions\/Mohist-1.12.2-b69b720-server.jar -o $SERVER_JARFILE\r\n\r\ncurl -sS https:\/\/launcher.mojang.com\/v1\/objects\/886945bfb2b978778c3a0288fd7fab09d315b25f\/server.jar -o minecraft_server.1.12.2.jar",
-            "container": "openjdk:8-alpine",
+            "script": "#!/bin/ash\r\n# Mohist Installation Script\r\n#\r\n# Server Files: /mnt/server\r\nrm -rf /mnt/server\r\n\r\napk update\r\napk add curl\r\n\r\ncd /mnt/server\r\n\r\necho -e \"\\nDownloading Mohist\\n\"\r\n\r\ncurl -sS https://mohistmc.com/api/1.19.4/latest -o $SERVER_JARFILE\r\n\r\ncurl -sS https://launcher.mojang.com/v1/objects/ed5a6bfb2b978778c3a0288fd7fab09d315b25f/server.jar -o minecraft_server.1.19.4.jar",
+            "container": "openjdk:17-alpine",
             "entrypoint": "ash"
         }
     },
@@ -30,7 +30,7 @@
             "default_value": "mohist.jar",
             "user_viewable": 1,
             "user_editable": 1,
-            "rules": "required|regex:\/^([\\w\\d._-]+)(\\.jar)$\/"
+            "rules": "required|regex:/^([\\w\\d._-]+)(\\.jar)$/"
         }
     ]
 }
